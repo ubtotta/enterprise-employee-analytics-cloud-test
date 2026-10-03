@@ -27,6 +27,8 @@ class DatabaseConnection:
         return cls._instance
 
     def connect(self, database: str | None = None):
+        from config import get_ssl_ca_path
+
         connection_args = {
             "host": settings.host,
             "port": settings.port,
@@ -36,10 +38,12 @@ class DatabaseConnection:
             "autocommit": False,
         }
 
-        if settings.ssl_ca:
+        ssl_ca_path = get_ssl_ca_path()
+
+        if ssl_ca_path:
             connection_args.update(
                 {
-                    "ssl_ca": settings.ssl_ca,
+                    "ssl_ca": ssl_ca_path,
                     "ssl_verify_cert": settings.ssl_verify_cert,
                     "ssl_verify_identity": settings.ssl_verify_identity,
                 }
