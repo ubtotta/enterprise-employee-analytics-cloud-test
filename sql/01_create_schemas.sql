@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS employee_staging CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS employee_oltp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS employee_dw CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

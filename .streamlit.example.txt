@@ -1,0 +1,10 @@
+For Streamlit Community Cloud, configure secrets in the Streamlit dashboard.
+Example:
+
+[database]
+host = "your-host"
+port = 3306
+user = "your-user"
+password = "your-password"
+
+Do not commit real credentials.

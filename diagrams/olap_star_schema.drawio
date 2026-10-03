@@ -1,0 +1,16 @@
+<mxfile host="app.diagrams.net" modified="2026-10-02T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="olap" name="OLAP Star Schema">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" page="1" pageWidth="1600" pageHeight="1000"><root>
+      <mxCell id="0"/><mxCell id="1" parent="0"/>
+      <mxCell id="f" value="FACT: Fact_PerformanceReviews\nPK review_sk\nFK employee_sk\nFK project_sk\nFK department_sk\nFK date_sk\nRating\nReview Score\nReview Count" style="shape=swimlane;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;" vertex="1" parent="1"><mxGeometry x="610" y="280" width="350" height="270" as="geometry"/></mxCell>
+      <mxCell id="e" value="Dim_Employee (SCD2)\nPK employee_sk\nNatural employee_id\nDepartment SK\nRole / Salary\nStart Date\nEnd Date\nIs Current" style="shape=swimlane;html=1;rounded=0;fillColor=#dae8fc;" vertex="1" parent="1"><mxGeometry x="100" y="90" width="300" height="220" as="geometry"/></mxCell>
+      <mxCell id="p" value="Dim_Project\nPK project_sk\nNatural project_id\nProject name\nStatus\nStart / End" style="shape=swimlane;html=1;rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="1120" y="100" width="270" height="190" as="geometry"/></mxCell>
+      <mxCell id="d" value="Dim_Date\nPK date_sk\nFull Date\nDay / Month\nQuarter / Year" style="shape=swimlane;html=1;rounded=0;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="100" y="620" width="270" height="170" as="geometry"/></mxCell>
+      <mxCell id="dep" value="Dim_Department\nPK department_sk\nNatural department_id\nName\nLocation\nBudget" style="shape=swimlane;html=1;rounded=0;fillColor=#e1d5e7;" vertex="1" parent="1"><mxGeometry x="1120" y="610" width="280" height="180" as="geometry"/></mxCell>
+      <mxCell id="ef" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="e" target="f"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="pf" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="p" target="f"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="df" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="d" target="f"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="depf" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="dep" target="f"><mxGeometry relative="1" as="geometry"/></mxCell>
+    </root></mxGraphModel>
+  </diagram>
+</mxfile>

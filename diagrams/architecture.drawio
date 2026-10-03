@@ -1,0 +1,19 @@
+<mxfile host="app.diagrams.net" modified="2026-10-02T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="architecture" name="Overall Architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="data" value="IBM HR Dataset / Faker\n100K+ Synthetic Rows\nHistorical SCD2 Records" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16" vertex="1" parent="1"><mxGeometry x="40" y="260" width="230" height="120" as="geometry"/></mxCell>
+        <mxCell id="oltp" value="MySQL OLTP\nEmployees\nDepartments\nProjects\nAssignments\nReviews" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16" vertex="1" parent="1"><mxGeometry x="350" y="260" width="230" height="150" as="geometry"/></mxCell>
+        <mxCell id="etl" value="ETL / Transformation\nPython + SQL\nCTEs + Window Functions\nSCD Type 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16" vertex="1" parent="1"><mxGeometry x="660" y="260" width="250" height="150" as="geometry"/></mxCell>
+        <mxCell id="olap" value="MySQL OLAP Star Schema\nDim_Employee (SCD2)\nDim_Project / Date / Department\nFact_PerformanceReviews" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16" vertex="1" parent="1"><mxGeometry x="990" y="240" width="270" height="190" as="geometry"/></mxCell>
+        <mxCell id="app" value="Streamlit Application\nOOP + DAL\nEmployee / Project / Review Forms\nPlotly Analytics Dashboard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=16" vertex="1" parent="1"><mxGeometry x="1340" y="250" width="250" height="170" as="geometry"/></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1" edge="1" parent="1" source="data" target="oltp"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1" edge="1" parent="1" source="oltp" target="etl"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1" edge="1" parent="1" source="etl" target="olap"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;html=1" edge="1" parent="1" source="olap" target="app"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="forms write" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=block;html=1" edge="1" parent="1" source="app" target="oltp"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1450" y="520"/><mxPoint x="460" y="520"/></Array></mxGeometry></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

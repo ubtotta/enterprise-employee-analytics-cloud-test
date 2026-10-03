@@ -1,0 +1,17 @@
+<mxfile host="app.diagrams.net" modified="2026-10-02T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="oltp" name="OLTP ERD">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" page="1" pageWidth="1600" pageHeight="1000"><root>
+      <mxCell id="0"/><mxCell id="1" parent="0"/>
+      <mxCell id="d" value="Departments\nPK department_id\nDepartment name\nLocation\nBudget" style="shape=swimlane;html=1;rounded=0;fillColor=#dae8fc;" vertex="1" parent="1"><mxGeometry x="60" y="80" width="250" height="180" as="geometry"/></mxCell>
+      <mxCell id="e" value="Employees\nPK employee_id\nFK department_id\nName / Email\nRole / Salary\nHire Date / Status" style="shape=swimlane;html=1;rounded=0;fillColor=#d5e8d4;" vertex="1" parent="1"><mxGeometry x="400" y="70" width="280" height="210" as="geometry"/></mxCell>
+      <mxCell id="p" value="Projects\nPK project_id\nProject name\nStart / End\nStatus" style="shape=swimlane;html=1;rounded=0;fillColor=#fff2cc;" vertex="1" parent="1"><mxGeometry x="800" y="70" width="260" height="180" as="geometry"/></mxCell>
+      <mxCell id="a" value="Assignments\nPK assignment_id\nFK employee_id\nFK project_id\nRole / Dates" style="shape=swimlane;html=1;rounded=0;fillColor=#f8cecc;" vertex="1" parent="1"><mxGeometry x="430" y="400" width="280" height="180" as="geometry"/></mxCell>
+      <mxCell id="r" value="Reviews\nPK review_id\nFK employee_id\nFK project_id\nReview date\nRating / Score" style="shape=swimlane;html=1;rounded=0;fillColor=#e1d5e7;" vertex="1" parent="1"><mxGeometry x="850" y="390" width="280" height="190" as="geometry"/></mxCell>
+      <mxCell id="ed" value="1:N" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="d" target="e"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="ea" value="1:N" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="e" target="a"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="pa" value="1:N" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="p" target="a"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="er" value="1:N" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="e" target="r"><mxGeometry relative="1" as="geometry"/></mxCell>
+      <mxCell id="pr" value="1:N" style="endArrow=ERone;startArrow=ERmany;html=1;" edge="1" parent="1" source="p" target="r"><mxGeometry relative="1" as="geometry"/></mxCell>
+    </root></mxGraphModel>
+  </diagram>
+</mxfile>
